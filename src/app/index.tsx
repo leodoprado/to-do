@@ -1,5 +1,5 @@
 import Card from '../components/Card'
-import { Container, Conteudo, td } from './styles'
+import { Container, Conteudo, CardTodo } from './styles'
 import { ChangeEvent, useEffect, useState } from 'react';
 
 export type Todo = {
@@ -50,18 +50,16 @@ export default function intex() {
     <>
       <Container>
         <Conteudo>
-          <input value={todoInput} onChange={handleInputChange} />
+          <input placeholder='Digite sua tarefa...' value={todoInput} onChange={handleInputChange} />
           <button onClick={addTodo}>Adicionar</button>
         </Conteudo>
 
-        <td>
-          {
-            todos.map((todo) => (
-              <Card key={todo.id} todo={todo} completeTodo={completeTodo} deleteTodo={deleteTodo} />
-            ))
-          }
-        </td>
-        
+        {
+          todos.map((todo) => (
+            <Card key={todo.id} todo={todo} completeTodo={completeTodo} deleteTodo={deleteTodo} />
+          ))
+        }
+
       </Container>
     </>
   )

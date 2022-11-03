@@ -28,6 +28,7 @@ export const Conteudo = styled.div`
     input:hover, button:hover{
         border: 1px solid #7c7c7c;
         color: #fff;
+        background-color: #222222;
     }
 
     button {
@@ -47,7 +48,7 @@ export const Conteudo = styled.div`
     }  
 `
 
-export const td = styled.div`
+export const CardTodo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;

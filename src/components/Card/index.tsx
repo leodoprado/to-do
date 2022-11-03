@@ -1,5 +1,5 @@
 import { Todo } from '../../app'
-import { Card, CardButtons} from './styles'
+import { Card, CardButtons, done} from './styles'
 
 type CardProps = {
     todo: Todo;
@@ -11,17 +11,17 @@ export default function index({ todo, completeTodo, deleteTodo }: CardProps) {
     function handleCompleteTodo() {
         completeTodo(todo.id)
       }
-    
-      function handleDeleteTodo() {
+
+    function handleDeleteTodo() {
         deleteTodo(todo.id)
-      }
+    }
   
     return (
     <>
-    <Card>
+    <Card className={`Card ${todo.completed ? done : ''}`}>
         <h2>{todo.title}</h2>
         <CardButtons>
-            <button onClick={handleCompleteTodo}>{todo.completed ? 'Retomar' : 'Completar'}</button>
+            <button className='completed' onClick={handleCompleteTodo}>{todo.completed ? 'Retomar' : 'Completar'}</button>
             <button onClick={handleDeleteTodo}>Deletar</button>
         </CardButtons>
     </Card>
